@@ -1,0 +1,403 @@
+{% extends 'global/base.html' %}
+
+{% block content %}
+    {% comment %} <div class="single-contact">
+        <h1 class="single-contact-name">
+            {{contact.nome_do_paciente}}
+        </h1>
+        <p><b>ID:</b> {{contact.id}}</p>
+        <p><b>Data de internação:</b> {{contact.data_de_internacao}}</p>
+        <p><b>Nome da gestante:</b> {{contact.nome_da_gestante}}</p>
+        <p><b>Idade da gestante:</b> {{contact.idade_da_gestante}}</p>
+        <p><b>Município de origem:</b> {{contact.municipio_de_origem}}</p>
+        <p><b>Unidade de saúde:</b> {{contact.unidade_de_saude}}</p>
+        <p><b>Quantidade de consultas:</b> {{contact.qtd_consultas_pre_natal}}</p>
+        <p><b>Procedência:</b> {{contact.procedencia}}</p>
+        <p><b>Peso:</b> {{contact.peso}}</p>
+        <p><b>Altura:</b> {{contact.altura}}</p>
+        <p><b>DON G:</b> {{contact.don_g}}</p>
+        <p><b>DON PN:</b> {{contact.don_pn}}</p>
+        <p><b>DON PC:</b> {{contact.don_pc}}</p>
+        <p><b>DON A:</b> {{contact.don_a}}</p>
+        <p><b>IG semanas:</b> {{contact.ig_semanas}}</p>
+        <p><b>IG dias:</b> {{contact.ig_dias}}</p>
+        <p><b>Trabalho de parto:</b> {{contact.trabalho_de_parto}}</p>
+        <p><b>Bolsa:</b> {{contact.bolsa}}</p>
+        <p><b>Strepto:</b> {{contact.strepto}}</p>
+        <p><b>Antibiótico:</b> {{contact.antibiotico}}</p>
+        <p><b>Plano de parto:</b> {{contact.plano_de_parto}}</p>
+        <p><b>Classificação de Robson:</b> {{contact.classificacao_de_robson}}</p>
+        <p><b>HIV:</b> {{contact.hiv}}</p>
+        <p><b>Sífilis:</b> {{contact.sifilis}}</p>
+        <p><b>Indução Miso:</b> {{contact.inducao_miso}}</p>
+        <p><b>Indução Ocitocina:</b> {{contact.inducao_ocitocina}}</p>
+        <p><b>Condução Ocitocina:</b> {{contact.conducao_ocitocina}}</p>
+        <p><b>Condução Amniotomia:</b> {{contact.conducao_amniotomia}}</p>
+        <p><b>Tipo de parto:</b> {{contact.tipo_de_parto}}</p>
+        <p><b>Períneo:</b> {{contact.perineo}}</p>
+        <p><b>Indicação de Episiotomia:</b> {{contact.indicacao_episiotomia}}</p>
+        <p><b>Patologia:</b> {{contact.patologia}}</p>
+        <p><b>Bola:</b> {{contact.bola}}</p>
+        <p><b>Banho:</b> {{contact.banho}}</p>
+        <p><b>Deambulação/Agachamento:</b> {{contact.deambulacao_agachamento}}</p>
+        <p><b>Cavalinho:</b> {{contact.cavalinho}}</p>
+        <p><b>Analgesia no parto:</b> {{contact.analgesia_no_parto}}</p>
+        <p><b>Acompanhante:</b> {{contact.acompanhante}}</p>
+        <p><b>Médico Obstetra:</b> {{contact.medico_obstetra}}</p>
+        <p><b>Enfermeira Obstetra:</b> {{contact.enfermeira_obstetra}}</p>
+        <p><b>Médico Pediatra:</b> {{contact.medico_pediatra}}</p>
+        <p><b>Anestesista:</b> {{contact.anestesista}}</p>
+        <p><b>Tipo de anestesia:</b> {{contact.tipo_de_anestesia}}</p>
+        <p><b>Quem realizou o parto:</b> {{contact.quem_realizou_parto}}</p>
+        <p><b>Indicação de parto cesárea:</b> {{contact.indicacao_parto_cesarea}}</p>
+        <p><b>Indicação de DIU ou LT:</b> {{contact.indicacao_diu_lt}}</p>
+        <p><b>Profilaxia com Ergotrate:</b> {{contact.profilaxia_ergotrate}}</p>
+        <p><b>Profilaxia com Ocitocina:</b> {{contact.profilaxia_ocitocina}}</p>
+        <p><b>Profilaxia com Miso:</b> {{contact.profilaxia_miso}}</p>
+        <p><b>Profilaxia com Transamin:</b> {{contact.profilaxia_transamin}}</p>
+        <p><b>Posição do parto:</b> {{contact.posicao_do_parto}}</p>
+        <p><b>Data de nascimento do RN:</b> {{contact.data_nascimento_rn}}</p>
+        <p><b>Hora do nascimento:</b> {{contact.hora_nascimento}}</p>
+        <p><b>Apresentação:</b> {{contact.apresentacao}}</p>
+        <p><b>Sexo do RN:</b> {{contact.sexo_rn}}</p>
+        <p><b>Peso do RN:</b> {{contact.peso_rn}}</p>
+        <p><b>PC:</b> {{contact.pc}}</p>
+        <p><b>PT:</b> {{contact.pt}}</p>
+        <p><b>PA:</b> {{contact.pa}}</p>
+        <p><b>EST:</b> {{contact.est}}</p>
+        <p><b>Apgar 1º minuto:</b> {{contact.apgar_minuto_1}}</p>
+        <p><b>Apgar 5º minuto:</b> {{contact.apgar_minuto_5}}</p>
+        <p><b>TAX RN:</b> {{contact.tax_rn}}</p>
+        <p><b>Amamentação na 1ª hora:</b> {{contact.amamentacao_hora_1}}</p>
+        <p><b>Justificativa:</b> {{contact.justificativa_amamentacao}}</p>
+        <p><b>Contato pele a pele:</b> {{contact.contato_pele_a_pele}}</p>
+        <p><b>Justificativa:</b> {{contact.justificativa_contato_pele_a_pele}}</p>
+        <p><b>Destino da mãe:</b> {{contact.destino_mae}}</p>
+        <p><b>Destino do RN:</b> {{contact.destino_rn}}</p>
+        <p><b>DNV:</b> {{contact.dnv}}</p>
+        <p><b>Baby Puff:</b> {{contact.baby_puff}}</p>
+        <p><b>Anotações:</b> {{contact.anotacoes}}</p>
+        <p><b>Data da criação:</b> {{contact.created_date}}</p>
+        <p><b>Owner:</b> {{contact.owner}}</p>
+    </div> {% endcomment %}
+    <div class="responsive-table">
+        <div class="single-contact">
+            <h1 class="single-contact-name">
+                Paciente: {{contact.nome_da_gestante}}, idade: {{contact.idade_da_gestante}}  -  Data do parto: {{contact.data_nascimento_rn}}  -  Tipo do parto: {{contact.tipo_de_parto}}
+            </h1>
+        </div>
+        <table class="contacts-table">
+            {% comment %} <caption class="table-caption">
+                Ficha completa
+            </caption> {% endcomment %}
+            <thead>
+                <tr class="table-row table-row-header-2">
+                    <th class="table-header">ID</th>
+                    <th class="table-header">Data de internação</th>
+                    <th class="table-header">Nome da gestante</th>
+                    <th class="table-header">DN da gestante</th>
+                    <th class="table-header">Idade da gestante</th>
+                    <th class="table-header">Município de origem</th>
+                    <th class="table-header">Unidade de saúde</th>
+                    <th class="table-header">Qtd de consultas pré-natal</th>
+                    <th class="table-header">Procedência</th>
+                    <th class="table-header">Peso</th>
+                    <th class="table-header">Altura</th>
+                    <th class="table-header">DON G</th>
+                    <th class="table-header">DON PN</th>
+                    <th class="table-header">DON PC</th>
+                    <th class="table-header">DON A</th>
+                    <th class="table-header">IG semanas</th>
+                    <th class="table-header">IG dias</th>
+                    <th class="table-header">Trabalho de parto</th>
+                    <th class="table-header">Bolsa</th>
+                    <th class="table-header">Strepto</th>
+                    <th class="table-header">Antibiótico</th>
+                    <th class="table-header">Plano de parto</th>
+                    <th class="table-header">Classificação de Robson</th>
+                    <th class="table-header">HIV</th>
+                    <th class="table-header">Sífilis</th>
+                    <th class="table-header">Indução Miso</th>
+                    <th class="table-header">Indução Ocitocina</th>
+                    <th class="table-header">Condução Ocitocina</th>
+                    <th class="table-header">Condução Amniotomia</th>
+                    <th class="table-header">Tipo de parto</th>
+                    <th class="table-header">Períneo</th>
+                    <th class="table-header">Indicação Episiotomia</th>
+                    <th class="table-header">Patologia</th>
+                    <th class="table-header">Bola</th>
+                    <th class="table-header">Banho</th>
+                    <th class="table-header">Deambulação/Agachamento</th>
+                    <th class="table-header">Cavalinho</th>
+                    <th class="table-header">Analgesia no parto</th>
+                    <th class="table-header">Acompanhante</th>
+                    <th class="table-header">Médico Obstetra</th>
+                    <th class="table-header">Enfermeira Obstetra</th>
+                    <th class="table-header">Médico Pediatra</th>
+                    <th class="table-header">Anestesista</th>
+                    <th class="table-header">Tipo de anestesia</th>
+                    <th class="table-header">Quem realizou o parto</th>
+                    <th class="table-header">Indicação parto cesárea</th>
+                    <th class="table-header">Indicação DIU/LT</th>
+                    <th class="table-header">Profilaxia Ergotrate</th>
+                    <th class="table-header">Profilaxia Ocitocina</th>
+                    <th class="table-header">Profilaxia Miso</th>
+                    <th class="table-header">Profilaxia Transamin</th>
+                    <th class="table-header">Posição do parto</th>
+                    <th class="table-header">DN do RN</th>
+                    <th class="table-header">Hora de nascimento</th>
+                    <th class="table-header">Apresentação</th>
+                    <th class="table-header">Sexo RN</th>
+                    <th class="table-header">Peso RN</th>
+                    <th class="table-header">PC</th>
+                    <th class="table-header">PT</th>
+                    <th class="table-header">PA</th>
+                    <th class="table-header">EST</th>
+                    <th class="table-header">Apgar 1º minuto</th>
+                    <th class="table-header">Apgar 5º minuto</th>
+                    <th class="table-header">TAX RN</th>
+                    <th class="table-header">Amamentação 1ª hora</th>
+                    <th class="table-header">Justificativa</th>
+                    <th class="table-header">Contato pele a pele</th>
+                    <th class="table-header">Justificativa</th>
+                    <th class="table-header">Destino da mãe</th>
+                    <th class="table-header">Destino do RN</th>
+                    <th class="table-header">DNV</th>
+                    <th class="table-header">Baby Puff</th>
+                    <th class="table-header">Anotações</th>
+                    <th class="table-header">Data do registro</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% comment %} {% for contact in contacts %} {% endcomment %}
+                    <tr class="table-row">
+                        <td class="table-cel">
+                            <a class="table-link" href="{% url 'contact:contact' contact.id %}">
+                                {{contact.id}}
+                            </a>
+                        </td>
+                        <td class="table-cel">
+                            {{contact.data_de_internacao}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.nome_da_gestante}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.data_nascimento_gestante}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.idade_da_gestante}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.municipio_de_origem}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.unidade_de_saude}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.qtd_consultas_pre_natal}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.procedencia}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.peso}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.altura}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.don_g}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.don_pn}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.don_pc}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.don_a}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.ig_semanas}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.ig_dias}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.trabalho_de_parto}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.bolsa}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.strepto}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.antibiotico}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.plano_de_parto}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.classificacao_de_robson}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.hiv}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.sifilis}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.inducao_miso}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.inducao_ocitocina}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.conducao_ocitocina}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.conducao_amniotomia}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.tipo_de_parto}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.perineo}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.indicacao_episiotomia}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.patologia}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.bola}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.banho}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.deambulacao_agachamento}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.cavalinho}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.analgesia_no_parto}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.acompanhante}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.medico_obstetra}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.enfermeira_obstetra}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.medico_pediatra}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.anestesista}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.tipo_de_anestesia}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.quem_realizou_parto}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.indicacao_parto_cesarea}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.indicacao_diu_lt}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.profilaxia_ergotrate}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.profilaxia_ocitocina}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.profilaxia_miso}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.profilaxia_transamin}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.posicao_do_parto}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.data_nascimento_rn}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.hora_nascimento}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.apresentacao}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.sexo_rn}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.peso_rn}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.pc}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.pt}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.pa}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.est}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.apgar_minuto_1}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.apgar_minuto_5}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.tax_rn}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.amamentacao_hora_1}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.justificativa_amamentacao}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.contato_pele_a_pele}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.justificativa_contato_pele_a_pele}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.destino_mae}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.destino_rn}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.dnv}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.baby_puff}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.anotacoes}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.created_date}}
+                        </td>
+                    </tr>
+                {% comment %} {% endfor %} {% endcomment %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
