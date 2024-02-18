@@ -155,6 +155,7 @@
   .table-cel,
   .table-header {
     padding: var(--spacing);
+    text-wrap: nowrap;
   }
 
   .table-cel {
@@ -167,7 +168,7 @@
     transition: color var(--transition-fast) ease-in-out;
     text-decoration: none;
   }
-  
+
   .table-link:hover {
     color: var(--clr-black);
   }
