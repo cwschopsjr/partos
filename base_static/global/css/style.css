@@ -169,7 +169,7 @@
     transition: color var(--transition-fast) ease-in-out;
     text-decoration: none;
   }
-  
+
   .table-link:hover {
     color: var(--clr-black);
   }
