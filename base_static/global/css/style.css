@@ -150,11 +150,13 @@
   .table-row-header-2 {
     font-size: var(--smaller-font-size);
     text-align: center;
+    text-wrap: nowrap;
   }
  
   .table-cel,
   .table-header {
     padding: var(--spacing);
+    text-wrap: nowrap;
   }
 
   .table-cel {

@@ -28,7 +28,7 @@
                             {{contact.nome_da_gestante}}
                         </td>
                         <td class="table-cel">
-                            {{contact.data_nascimento_gestante}}
+                            {{contact.data_nascimento_gestante|date:"d-m-y"}}
                         </td>
                         <td class="table-cel">
                             {{contact.idade_da_gestante}}
@@ -37,7 +37,7 @@
                             {{contact.tipo_de_parto}}
                         </td>
                         <td class="table-cel">
-                            {{contact.data_nascimento_rn}}
+                            {{contact.data_nascimento_rn|date:"d-m-y"}}
                         </td>
                     </tr>
                 {% endfor %}

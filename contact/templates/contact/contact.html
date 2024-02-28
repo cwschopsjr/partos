@@ -1,89 +1,11 @@
 {% extends 'global/base.html' %}
 
 {% block content %}
-    {% comment %} <div class="single-contact">
-        <h1 class="single-contact-name">
-            {{contact.nome_do_paciente}}
-        </h1>
-        <p><b>ID:</b> {{contact.id}}</p>
-        <p><b>Data de internação:</b> {{contact.data_de_internacao}}</p>
-        <p><b>Nome da gestante:</b> {{contact.nome_da_gestante}}</p>
-        <p><b>Idade da gestante:</b> {{contact.idade_da_gestante}}</p>
-        <p><b>Município de origem:</b> {{contact.municipio_de_origem}}</p>
-        <p><b>Unidade de saúde:</b> {{contact.unidade_de_saude}}</p>
-        <p><b>Quantidade de consultas:</b> {{contact.qtd_consultas_pre_natal}}</p>
-        <p><b>Procedência:</b> {{contact.procedencia}}</p>
-        <p><b>Peso:</b> {{contact.peso}}</p>
-        <p><b>Altura:</b> {{contact.altura}}</p>
-        <p><b>DON G:</b> {{contact.don_g}}</p>
-        <p><b>DON PN:</b> {{contact.don_pn}}</p>
-        <p><b>DON PC:</b> {{contact.don_pc}}</p>
-        <p><b>DON A:</b> {{contact.don_a}}</p>
-        <p><b>IG semanas:</b> {{contact.ig_semanas}}</p>
-        <p><b>IG dias:</b> {{contact.ig_dias}}</p>
-        <p><b>Trabalho de parto:</b> {{contact.trabalho_de_parto}}</p>
-        <p><b>Bolsa:</b> {{contact.bolsa}}</p>
-        <p><b>Strepto:</b> {{contact.strepto}}</p>
-        <p><b>Antibiótico:</b> {{contact.antibiotico}}</p>
-        <p><b>Plano de parto:</b> {{contact.plano_de_parto}}</p>
-        <p><b>Classificação de Robson:</b> {{contact.classificacao_de_robson}}</p>
-        <p><b>HIV:</b> {{contact.hiv}}</p>
-        <p><b>Sífilis:</b> {{contact.sifilis}}</p>
-        <p><b>Indução Miso:</b> {{contact.inducao_miso}}</p>
-        <p><b>Indução Ocitocina:</b> {{contact.inducao_ocitocina}}</p>
-        <p><b>Condução Ocitocina:</b> {{contact.conducao_ocitocina}}</p>
-        <p><b>Condução Amniotomia:</b> {{contact.conducao_amniotomia}}</p>
-        <p><b>Tipo de parto:</b> {{contact.tipo_de_parto}}</p>
-        <p><b>Períneo:</b> {{contact.perineo}}</p>
-        <p><b>Indicação de Episiotomia:</b> {{contact.indicacao_episiotomia}}</p>
-        <p><b>Patologia:</b> {{contact.patologia}}</p>
-        <p><b>Bola:</b> {{contact.bola}}</p>
-        <p><b>Banho:</b> {{contact.banho}}</p>
-        <p><b>Deambulação/Agachamento:</b> {{contact.deambulacao_agachamento}}</p>
-        <p><b>Cavalinho:</b> {{contact.cavalinho}}</p>
-        <p><b>Analgesia no parto:</b> {{contact.analgesia_no_parto}}</p>
-        <p><b>Acompanhante:</b> {{contact.acompanhante}}</p>
-        <p><b>Médico Obstetra:</b> {{contact.medico_obstetra}}</p>
-        <p><b>Enfermeira Obstetra:</b> {{contact.enfermeira_obstetra}}</p>
-        <p><b>Médico Pediatra:</b> {{contact.medico_pediatra}}</p>
-        <p><b>Anestesista:</b> {{contact.anestesista}}</p>
-        <p><b>Tipo de anestesia:</b> {{contact.tipo_de_anestesia}}</p>
-        <p><b>Quem realizou o parto:</b> {{contact.quem_realizou_parto}}</p>
-        <p><b>Indicação de parto cesárea:</b> {{contact.indicacao_parto_cesarea}}</p>
-        <p><b>Indicação de DIU ou LT:</b> {{contact.indicacao_diu_lt}}</p>
-        <p><b>Profilaxia com Ergotrate:</b> {{contact.profilaxia_ergotrate}}</p>
-        <p><b>Profilaxia com Ocitocina:</b> {{contact.profilaxia_ocitocina}}</p>
-        <p><b>Profilaxia com Miso:</b> {{contact.profilaxia_miso}}</p>
-        <p><b>Profilaxia com Transamin:</b> {{contact.profilaxia_transamin}}</p>
-        <p><b>Posição do parto:</b> {{contact.posicao_do_parto}}</p>
-        <p><b>Data de nascimento do RN:</b> {{contact.data_nascimento_rn}}</p>
-        <p><b>Hora do nascimento:</b> {{contact.hora_nascimento}}</p>
-        <p><b>Apresentação:</b> {{contact.apresentacao}}</p>
-        <p><b>Sexo do RN:</b> {{contact.sexo_rn}}</p>
-        <p><b>Peso do RN:</b> {{contact.peso_rn}}</p>
-        <p><b>PC:</b> {{contact.pc}}</p>
-        <p><b>PT:</b> {{contact.pt}}</p>
-        <p><b>PA:</b> {{contact.pa}}</p>
-        <p><b>EST:</b> {{contact.est}}</p>
-        <p><b>Apgar 1º minuto:</b> {{contact.apgar_minuto_1}}</p>
-        <p><b>Apgar 5º minuto:</b> {{contact.apgar_minuto_5}}</p>
-        <p><b>TAX RN:</b> {{contact.tax_rn}}</p>
-        <p><b>Amamentação na 1ª hora:</b> {{contact.amamentacao_hora_1}}</p>
-        <p><b>Justificativa:</b> {{contact.justificativa_amamentacao}}</p>
-        <p><b>Contato pele a pele:</b> {{contact.contato_pele_a_pele}}</p>
-        <p><b>Justificativa:</b> {{contact.justificativa_contato_pele_a_pele}}</p>
-        <p><b>Destino da mãe:</b> {{contact.destino_mae}}</p>
-        <p><b>Destino do RN:</b> {{contact.destino_rn}}</p>
-        <p><b>DNV:</b> {{contact.dnv}}</p>
-        <p><b>Baby Puff:</b> {{contact.baby_puff}}</p>
-        <p><b>Anotações:</b> {{contact.anotacoes}}</p>
-        <p><b>Data da criação:</b> {{contact.created_date}}</p>
-        <p><b>Owner:</b> {{contact.owner}}</p>
-    </div> {% endcomment %}
+
     <div class="responsive-table">
         <div class="single-contact">
             <h1 class="single-contact-name">
-                Paciente: {{contact.nome_da_gestante}}, idade: {{contact.idade_da_gestante}}  -  Data do parto: {{contact.data_nascimento_rn}}  -  Tipo do parto: {{contact.tipo_de_parto}}
+                Paciente: {{contact.nome_da_gestante}}, idade: {{contact.idade_da_gestante}}  -  Data do parto: {{contact.data_nascimento_rn|date:"d-m-y"}}  -  Tipo do parto: {{contact.tipo_de_parto}}
             </h1>
         </div>
         <table class="contacts-table">
@@ -177,13 +99,13 @@
                             </a>
                         </td>
                         <td class="table-cel">
-                            {{contact.data_de_internacao}}
+                            {{contact.data_de_internacao|date:"d-m-y"}}
                         </td>
                         <td class="table-cel">
                             {{contact.nome_da_gestante}}
                         </td>
                         <td class="table-cel">
-                            {{contact.data_nascimento_gestante}}
+                            {{contact.data_nascimento_gestante|date:"d-m-y"}}
                         </td>
                         <td class="table-cel">
                             {{contact.idade_da_gestante}}
@@ -330,7 +252,7 @@
                             {{contact.posicao_do_parto}}
                         </td>
                         <td class="table-cel">
-                            {{contact.data_nascimento_rn}}
+                            {{contact.data_nascimento_rn|date:"d-m-y"}}
                         </td>
                         <td class="table-cel">
                             {{contact.hora_nascimento}}
@@ -399,5 +321,84 @@
                 {% comment %} {% endfor %} {% endcomment %}
             </tbody>
         </table>
+    </div>
+    <div class="single-contact">
+        <h1 class="single-contact-name">
+            Paciente: {{contact.nome_da_gestante}}
+        </h1>
+        <p><b>ID:</b> {{contact.id}}</p>
+        <p><b>Data de internação:</b> {{contact.data_de_internacao}}</p>
+        <p><b>Nome da gestante:</b> {{contact.nome_da_gestante}}</p>
+        <p><b>Idade da gestante:</b> {{contact.idade_da_gestante}}</p>
+        <p><b>Município de origem:</b> {{contact.municipio_de_origem}}</p>
+        <p><b>Unidade de saúde:</b> {{contact.unidade_de_saude}}</p>
+        <p><b>Quantidade de consultas:</b> {{contact.qtd_consultas_pre_natal}}</p>
+        <p><b>Procedência:</b> {{contact.procedencia}}</p>
+        <p><b>Peso:</b> {{contact.peso}}</p>
+        <p><b>Altura:</b> {{contact.altura}}</p>
+        <p><b>DON G:</b> {{contact.don_g}}</p>
+        <p><b>DON PN:</b> {{contact.don_pn}}</p>
+        <p><b>DON PC:</b> {{contact.don_pc}}</p>
+        <p><b>DON A:</b> {{contact.don_a}}</p>
+        <p><b>IG semanas:</b> {{contact.ig_semanas}}</p>
+        <p><b>IG dias:</b> {{contact.ig_dias}}</p>
+        <p><b>Trabalho de parto:</b> {{contact.trabalho_de_parto}}</p>
+        <p><b>Bolsa:</b> {{contact.bolsa}}</p>
+        <p><b>Strepto:</b> {{contact.strepto}}</p>
+        <p><b>Antibiótico:</b> {{contact.antibiotico}}</p>
+        <p><b>Plano de parto:</b> {{contact.plano_de_parto}}</p>
+        <p><b>Classificação de Robson:</b> {{contact.classificacao_de_robson}}</p>
+        <p><b>HIV:</b> {{contact.hiv}}</p>
+        <p><b>Sífilis:</b> {{contact.sifilis}}</p>
+        <p><b>Indução Miso:</b> {{contact.inducao_miso}}</p>
+        <p><b>Indução Ocitocina:</b> {{contact.inducao_ocitocina}}</p>
+        <p><b>Condução Ocitocina:</b> {{contact.conducao_ocitocina}}</p>
+        <p><b>Condução Amniotomia:</b> {{contact.conducao_amniotomia}}</p>
+        <p><b>Tipo de parto:</b> {{contact.tipo_de_parto}}</p>
+        <p><b>Períneo:</b> {{contact.perineo}}</p>
+        <p><b>Indicação de Episiotomia:</b> {{contact.indicacao_episiotomia}}</p>
+        <p><b>Patologia:</b> {{contact.patologia}}</p>
+        <p><b>Bola:</b> {{contact.bola}}</p>
+        <p><b>Banho:</b> {{contact.banho}}</p>
+        <p><b>Deambulação/Agachamento:</b> {{contact.deambulacao_agachamento}}</p>
+        <p><b>Cavalinho:</b> {{contact.cavalinho}}</p>
+        <p><b>Analgesia no parto:</b> {{contact.analgesia_no_parto}}</p>
+        <p><b>Acompanhante:</b> {{contact.acompanhante}}</p>
+        <p><b>Médico Obstetra:</b> {{contact.medico_obstetra}}</p>
+        <p><b>Enfermeira Obstetra:</b> {{contact.enfermeira_obstetra}}</p>
+        <p><b>Médico Pediatra:</b> {{contact.medico_pediatra}}</p>
+        <p><b>Anestesista:</b> {{contact.anestesista}}</p>
+        <p><b>Tipo de anestesia:</b> {{contact.tipo_de_anestesia}}</p>
+        <p><b>Quem realizou o parto:</b> {{contact.quem_realizou_parto}}</p>
+        <p><b>Indicação de parto cesárea:</b> {{contact.indicacao_parto_cesarea}}</p>
+        <p><b>Indicação de DIU ou LT:</b> {{contact.indicacao_diu_lt}}</p>
+        <p><b>Profilaxia com Ergotrate:</b> {{contact.profilaxia_ergotrate}}</p>
+        <p><b>Profilaxia com Ocitocina:</b> {{contact.profilaxia_ocitocina}}</p>
+        <p><b>Profilaxia com Miso:</b> {{contact.profilaxia_miso}}</p>
+        <p><b>Profilaxia com Transamin:</b> {{contact.profilaxia_transamin}}</p>
+        <p><b>Posição do parto:</b> {{contact.posicao_do_parto}}</p>
+        <p><b>Data de nascimento do RN:</b> {{contact.data_nascimento_rn}}</p>
+        <p><b>Hora do nascimento:</b> {{contact.hora_nascimento}}</p>
+        <p><b>Apresentação:</b> {{contact.apresentacao}}</p>
+        <p><b>Sexo do RN:</b> {{contact.sexo_rn}}</p>
+        <p><b>Peso do RN:</b> {{contact.peso_rn}}</p>
+        <p><b>PC:</b> {{contact.pc}}</p>
+        <p><b>PT:</b> {{contact.pt}}</p>
+        <p><b>PA:</b> {{contact.pa}}</p>
+        <p><b>EST:</b> {{contact.est}}</p>
+        <p><b>Apgar 1º minuto:</b> {{contact.apgar_minuto_1}}</p>
+        <p><b>Apgar 5º minuto:</b> {{contact.apgar_minuto_5}}</p>
+        <p><b>TAX RN:</b> {{contact.tax_rn}}</p>
+        <p><b>Amamentação na 1ª hora:</b> {{contact.amamentacao_hora_1}}</p>
+        <p><b>Justificativa:</b> {{contact.justificativa_amamentacao}}</p>
+        <p><b>Contato pele a pele:</b> {{contact.contato_pele_a_pele}}</p>
+        <p><b>Justificativa:</b> {{contact.justificativa_contato_pele_a_pele}}</p>
+        <p><b>Destino da mãe:</b> {{contact.destino_mae}}</p>
+        <p><b>Destino do RN:</b> {{contact.destino_rn}}</p>
+        <p><b>DNV:</b> {{contact.dnv}}</p>
+        <p><b>Baby Puff:</b> {{contact.baby_puff}}</p>
+        <p><b>Anotações:</b> {{contact.anotacoes}}</p>
+        <p><b>Data da criação:</b> {{contact.created_date}}</p>
+        <p><b>Owner:</b> {{contact.owner}}</p>
     </div>
 {% endblock content %}
