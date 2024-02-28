@@ -61,6 +61,14 @@
     z-index: 1;
     position: relative;
   }
+
+  .header-2 {
+    background: var(--main-page-width);
+    padding: var(--spacing);
+    box-shadow: 0 5px 10px 2px var(--clr-dark-shadow-20);
+    position: relative;
+    height: 200px;
+  }
   
   .header-heading {
     font-size: var(--biggest-font-size);

@@ -3,11 +3,9 @@ from contact.models import Contact
 
 
 def index(request):
-    contacts = Contact.objects.filter(show=True).order_by('-id')[:10]
 
     context = {
-        'contacts': contacts,
-        'site_title': 'Registros - ',
+
     }
 
     return render(request, 'contact/index.html', context)
@@ -25,3 +23,14 @@ def contact(request, contact_id):
     }
 
     return render(request, 'contact/contact.html', context)
+
+
+def livro(request):
+    contacts = Contact.objects.filter(show=True).order_by('-id')[:10]
+
+    context = {
+        'contacts': contacts,
+        'site_title': 'Registros - ',
+    }
+
+    return render(request, 'contact/livro.html', context)

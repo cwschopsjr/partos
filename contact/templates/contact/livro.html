@@ -1,0 +1,49 @@
+{% extends 'global/base.html' %}
+
+{% block content %}
+    <div class="responsive-table">
+        <table class="contacts-table">
+            {% comment %} <caption class="table-caption">
+                Livro de Parto
+            </caption> {% endcomment %}
+            <thead>
+                <tr class="table-row table-row-header">
+                    {% comment %} <th class="table-header">ID</th> {% endcomment %}
+                    <th class="table-header">Nome da gestante</th>
+                    <th class="table-header">DN da gestante</th>
+                    <th class="table-header">Idade da gestante</th>
+                    <th class="table-header">Tipo de parto</th>
+                    <th class="table-header">DN do RN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                    <tr class="table-row">
+                        {% comment %} <td class="table-cel">
+                            <a class="table-link" href="{% url 'contact:contact' contact.id %}">
+                                {{contact.id}}
+                            </a>
+                        </td> {% endcomment %}
+                        <td class="table-cel">
+                            <a class="table-link" href="{% url 'contact:contact' contact.id %}">
+                                {{contact.nome_da_gestante}}
+                            </a>
+                        </td>
+                        <td class="table-cel">
+                            {{contact.data_nascimento_gestante|date:"d-m-y"}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.idade_da_gestante}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.tipo_de_parto}}
+                        </td>
+                        <td class="table-cel">
+                            {{contact.data_nascimento_rn|date:"d-m-y"}}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
