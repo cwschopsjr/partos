@@ -111,8 +111,9 @@
   }
   
   .responsive-table {
-    width: 100%;
+    width: 82%;
     overflow-x: auto;
+    margin-left: 10rem;
   }
   
   .contacts-table {
@@ -180,15 +181,25 @@
       margin: calc(var(--spacing) * 2) auto;
     }
   }
+
+  @media (max-width: 600px) {
+    .responsive-table {
+      margin: 0;
+      max-width: 100%;
+    }
+  }
   
   .single-contact h1 {
     /* margin: 1rem 0; */
-    text-align: center;
     font-size: var(--small-font-size);
   }
   
   .single-contact p {
-    margin: 1rem 0;
+    margin: 0.5rem 0;
+  }
+
+  .single-contact-name-2 {
+    margin: auto;
   }
   
   .pagination {
