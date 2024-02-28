@@ -5,7 +5,7 @@
     <div class="responsive-table">
         <div class="single-contact">
             <h1 class="single-contact-name">
-                Paciente: {{contact.nome_da_gestante}}, idade: {{contact.idade_da_gestante}}  -  Data do parto: {{contact.data_nascimento_rn|date:"d-m-y"}}  -  Tipo do parto: {{contact.tipo_de_parto}}
+                Paciente: {{contact.nome_da_gestante}}, idade: {{contact.idade_da_gestante}}  -  Data do parto: {{contact.data_nascimento_rn}}  -  Tipo do parto: {{contact.tipo_de_parto}}
             </h1>
         </div>
         <table class="contacts-table">
@@ -14,7 +14,7 @@
             </caption> {% endcomment %}
             <thead>
                 <tr class="table-row table-row-header-2">
-                    <th class="table-header">ID</th>
+                    
                     <th class="table-header">Data de internação</th>
                     <th class="table-header">Nome da gestante</th>
                     <th class="table-header">DN da gestante</th>
@@ -93,11 +93,7 @@
             <tbody>
                 {% comment %} {% for contact in contacts %} {% endcomment %}
                     <tr class="table-row">
-                        <td class="table-cel">
-                            <a class="table-link" href="{% url 'contact:contact' contact.id %}">
-                                {{contact.id}}
-                            </a>
-                        </td>
+                        
                         <td class="table-cel">
                             {{contact.data_de_internacao|date:"d-m-y"}}
                         </td>
@@ -326,7 +322,7 @@
         <h1 class="single-contact-name">
             Paciente: {{contact.nome_da_gestante}}
         </h1>
-        <p><b>ID:</b> {{contact.id}}</p>
+        
         <p><b>Data de internação:</b> {{contact.data_de_internacao}}</p>
         <p><b>Nome da gestante:</b> {{contact.nome_da_gestante}}</p>
         <p><b>Idade da gestante:</b> {{contact.idade_da_gestante}}</p>
@@ -399,6 +395,5 @@
         <p><b>Baby Puff:</b> {{contact.baby_puff}}</p>
         <p><b>Anotações:</b> {{contact.anotacoes}}</p>
         <p><b>Data da criação:</b> {{contact.created_date}}</p>
-        <p><b>Owner:</b> {{contact.owner}}</p>
     </div>
 {% endblock content %}

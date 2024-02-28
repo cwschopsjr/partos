@@ -388,8 +388,8 @@ class Contact(models.Model):
     anotacoes = models.TextField(blank=True, verbose_name='Anotações')
     show = models.BooleanField(default=True)
     enviar_arquivo = models.ImageField(blank=True, upload_to='pictures/%Y/%m/')
-    owner = models.ForeignKey(
-        User, on_delete=models.SET_NULL, blank=True, null=True)
+    # owner = models.ForeignKey(
+    #     User, on_delete=models.SET_NULL, blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self) -> str:
