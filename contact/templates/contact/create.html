@@ -1,0 +1,29 @@
+{% extends 'global/base.html' %}
+
+{% block content %}
+  <div class="form-wrapper">
+
+    <h2 class="single-contact-name">Novo registro</h2>
+
+    <form 
+      action=""
+      method="POST"
+      enctype="multipart/form-data"
+    >
+
+      <div class="form-content">
+        <div class="form-group">
+          <label for="id_nome_da_gestante">LABEL</label>
+          <input type="text" name="nome_da_gestante" maxlength="255" id="id_nome_da_gestante">
+        </div>
+      </div>
+
+      <div class="form-content">
+        <div class="form-group">
+          <button class="btn" type="submit">Salvar</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+{% endblock content %}

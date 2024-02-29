@@ -1,5 +1,7 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from contact.models import Contact
+from django.db.models import Q
+from django.core.paginator import Paginator
 
 
 def index(request):
@@ -26,11 +28,48 @@ def contact(request, contact_id):
 
 
 def livro(request):
-    contacts = Contact.objects.filter(show=True).order_by('-id')[:10]
+    contacts = Contact.objects.filter(show=True).order_by('-id')
+
+    paginator = Paginator(contacts, 20)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
 
     context = {
-        'contacts': contacts,
+        'page_obj': page_obj,
         'site_title': 'Registros - ',
     }
 
     return render(request, 'contact/livro.html', context)
+
+
+def search(request):
+    search_value = request.GET.get('q', '').strip()
+
+    if search_value == '':
+        return redirect('contact:livro')
+
+    contacts = Contact.objects \
+        .filter(show=True)\
+        .filter(
+            Q(nome_da_gestante__icontains=search_value) |
+            Q(data_nascimento_gestante__icontains=search_value) |
+            Q(idade_da_gestante__icontains=search_value) |
+            Q(data_nascimento_rn__icontains=search_value)
+        )\
+        .order_by('-id')
+
+    paginator = Paginator(contacts, 20)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'page_obj': page_obj,
+        'site_title': 'Search - ',
+        'search_value': search_value,
+    }
+
+    return render(
+        request,
+        'contact/livro.html',
+        context
+    )

@@ -206,6 +206,10 @@
     margin: 0.5rem 0;
   }
 
+  .single-contact-name {
+    text-align: center;
+  }
+
   .single-contact-name-2 {
     margin: auto;
   }
