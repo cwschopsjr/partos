@@ -240,7 +240,8 @@ class Contact(models.Model):
         ("UBS/ESF Vila Ponte Nova/ESF Quarentenário", "UBS/ESF Vila Ponte Nova/ESF Quarentenário"), \
         ("Unidade de Saúde da Mulher", "Unidade de Saúde da Mulher"), \
         ("Unidade de Saúde do Adolescente", "Unidade de Saúde do Adolescente"), \
-        ("Outra/Não Informado", "Outra/Não Informado"),
+        ("Outra/Não Informado", "Outra/Não Informado"), \
+        ("Não fez Pré-natal", "Não fez Pré-natal"),
 
     perineo_choices = \
         ("Integro", "Integro"), \
@@ -261,135 +262,143 @@ class Contact(models.Model):
         ("Vertical", "Vertical"), \
 
     data_de_internacao = models.DateField(
-        auto_now=False, blank=True, null=True, verbose_name='Data de internação')
-    nome_da_gestante = models.CharField(max_length=50, blank=True, null=True)
+        auto_now=False, blank=False, null=False, verbose_name='Data de internação')
+    nome_da_gestante = models.CharField(max_length=50, blank=False, null=False)
     data_nascimento_gestante = models.DateField(
-        auto_now=False, blank=True, null=True, verbose_name='DN da gestante')
+        auto_now=False, blank=False, null=False, verbose_name='DN da gestante')
     idade_da_gestante = models.CharField(
-        choices=idade_gestante_choices, max_length=2, blank=True, null=True)
+        choices=idade_gestante_choices, max_length=2, blank=False, null=False)
     municipio_de_origem = models.CharField(
-        max_length=50, blank=True, null=True, verbose_name='Município de origem')
+        max_length=50, blank=False, null=False, verbose_name='Município de origem')
     unidade_de_saude = models.CharField(
-        choices=unidade_de_saude_choices, max_length=50, blank=True, verbose_name='Unidade de Saúde')
+        choices=unidade_de_saude_choices, max_length=50, blank=True, null=False, verbose_name='Unidade de Saúde')
     qtd_consultas_pre_natal = models.CharField(
-        choices=qtd_consultas_choices, max_length=3, blank=True, null=True, verbose_name='Consultas de pré-natal')
+        choices=qtd_consultas_choices, max_length=3, blank=False, null=False, verbose_name='Consultas de pré-natal')
     procedencia = models.CharField(
-        choices=procedencia_choices, max_length=2, blank=True, verbose_name='Procedência')
-    peso = models.FloatField(blank=True)
-    altura = models.FloatField(blank=True)
+        choices=procedencia_choices, max_length=2, blank=False, verbose_name='Procedência')
+    peso = models.FloatField(blank=False)
+    altura = models.FloatField(blank=False)
     don_g = models.CharField(
-        choices=don_choices, max_length=2, blank=True, null=True, verbose_name='DON (G)')
+        choices=don_choices, max_length=2, blank=False, null=False, verbose_name='DON (G)')
     don_pn = models.CharField(
-        choices=don_choices, max_length=2, blank=True, null=True, verbose_name='DON (PN)')
+        choices=don_choices, max_length=2, blank=False, null=False, verbose_name='DON (PN)')
     don_pc = models.CharField(
-        choices=don_choices, max_length=2, blank=True, null=True, verbose_name='DON (PC)')
+        choices=don_choices, max_length=2, blank=False, null=False, verbose_name='DON (PC)')
     don_a = models.CharField(
-        choices=don_choices, max_length=2, blank=True, null=True, verbose_name='DON (A)')
+        choices=don_choices, max_length=2, blank=False, null=False, verbose_name='DON (A)')
     ig_semanas = models.CharField(
-        choices=ig_semanas_choices, max_length=2, blank=True, null=True, verbose_name='IG (semanas)')
+        choices=ig_semanas_choices, max_length=2, blank=False, null=False, verbose_name='IG (semanas)')
     ig_dias = models.CharField(
-        choices=ig_dias_choices, max_length=3, blank=True, null=True, verbose_name='IG (dias)')
+        choices=ig_dias_choices, max_length=3, blank=False, null=False, verbose_name='IG (dias)')
     trabalho_de_parto = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True)
-    bolsa = models.CharField(choices=bolsa_choices, max_length=10, blank=True)
+        choices=sim_nao_choices, max_length=3, blank=False, null=False)
+    bolsa = models.CharField(choices=bolsa_choices,
+                             max_length=10, blank=False, null=False)
     strepto = models.CharField(
-        choices=strepto_choices, max_length=25, blank=True)
+        choices=strepto_choices, max_length=25, blank=False, null=False)
     antibiotico = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Antibiótico')
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Antibiótico')
     plano_de_parto = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True)
+        choices=sim_nao_choices, max_length=3, blank=False, null=False)
     classificacao_de_robson = models.CharField(
-        choices=robson_choices, max_length=2, blank=True, verbose_name='Classificação de Robson')
+        choices=robson_choices, max_length=2, blank=False, null=False, verbose_name='Classificação de Robson')
     hiv = models.CharField(choices=reagente_choices,
-                           max_length=3, blank=True, verbose_name='HIV')
+                           max_length=3, blank=False, null=False, verbose_name='HIV')
     sifilis = models.CharField(
-        choices=reagente_choices, max_length=3, blank=True, verbose_name='Sífilis')
+        choices=reagente_choices, max_length=3, blank=False, null=False, verbose_name='Sífilis')
     inducao_miso = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Indução (Miso)')
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Indução (Miso)')
     inducao_ocitocina = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Indução (Ocitocina)')
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Indução (Ocitocina)')
     conducao_ocitocina = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Condução (Ocitocina)')
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Condução (Ocitocina)')
     conducao_amniotomia = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Condução (Amniotomia)')
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Condução (Amniotomia)')
     tipo_de_parto = models.CharField(
-        choices=partos_choices, max_length=20, blank=True)
+        choices=partos_choices, max_length=20, blank=False, null=False)
     perineo = models.CharField(
-        choices=perineo_choices, max_length=25, blank=True, verbose_name='Períneo')
+        choices=perineo_choices, max_length=25, blank=False, null=False, verbose_name='Períneo')
     indicacao_episiotomia = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Indicação de Episiotomia')
-    patologia = models.CharField(max_length=30, blank=True)
-    bola = models.CharField(choices=sim_nao_choices, max_length=3, blank=True)
-    banho = models.CharField(choices=sim_nao_choices, max_length=3, blank=True)
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Indicação de Episiotomia')
+    patologia = models.CharField(max_length=30, blank=False, null=False)
+    bola = models.CharField(choices=sim_nao_choices,
+                            max_length=3, blank=False, null=False)
+    banho = models.CharField(choices=sim_nao_choices,
+                             max_length=3, blank=False, null=False)
     deambulacao_agachamento = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Deambulação / Agachamento')
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Deambulação / Agachamento')
     cavalinho = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True)
+        choices=sim_nao_choices, max_length=3, blank=False, null=False)
     analgesia_no_parto = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True)
+        choices=sim_nao_choices, max_length=3, blank=False, null=False)
     acompanhante = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True)
+        choices=sim_nao_choices, max_length=3, blank=False, null=False)
     medico_obstetra = models.CharField(
-        max_length=20, blank=True, verbose_name='Médico Obstetra')
-    enfermeira_obstetra = models.CharField(max_length=20, blank=True)
+        max_length=20, blank=False, verbose_name='Médico Obstetra')
+    enfermeira_obstetra = models.CharField(
+        max_length=20, blank=False, null=False)
     medico_pediatra = models.CharField(
-        max_length=20, blank=True, verbose_name='Médico Pediatra')
-    anestesista = models.CharField(max_length=25, blank=True)
+        max_length=20, blank=False, verbose_name='Médico Pediatra')
+    anestesista = models.CharField(max_length=25, blank=False, null=False)
     tipo_de_anestesia = models.CharField(
-        choices=anestesia_choices, max_length=25, blank=True)
-    quem_realizou_parto = models.CharField(max_length=20, blank=True)
+        choices=anestesia_choices, max_length=25, blank=False, null=False)
+    quem_realizou_parto = models.CharField(
+        max_length=20, blank=False, null=False)
     indicacao_parto_cesarea = models.CharField(
-        max_length=20, blank=True, verbose_name='Indicação de parto cesárea')
+        max_length=20, blank=False, null=False, verbose_name='Indicação de parto cesárea')
     indicacao_diu_lt = models.CharField(
-        choices=diu_lt_choices, max_length=3, blank=True, verbose_name='Indicação de DIU ou LT')
+        choices=diu_lt_choices, max_length=3, blank=False, null=False, verbose_name='Indicação de DIU ou LT')
     profilaxia_ergotrate = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Profilaxia com Ergotrate')
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Profilaxia com Ergotrate')
     profilaxia_ocitocina = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Profilaxia com Ocitocina')
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Profilaxia com Ocitocina')
     profilaxia_miso = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Profilaxia com Miso')
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Profilaxia com Miso')
     profilaxia_transamin = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Profilaxia com Transamin')
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Profilaxia com Transamin')
     posicao_do_parto = models.CharField(
-        choices=posicao_parto_choices, max_length=30, blank=True, verbose_name='Posição do parto')
+        choices=posicao_parto_choices, max_length=30, blank=False, null=False, verbose_name='Posição do parto')
     data_nascimento_rn = models.DateField(
-        auto_now=False, max_length=15, blank=True, verbose_name='DN do RN')
+        auto_now=False, max_length=15, blank=False, null=False, verbose_name='DN do RN')
     hora_nascimento = models.TimeField(
-        auto_now=False, max_length=15, blank=True, verbose_name='Hora do nascimento')
+        auto_now=False, max_length=15, blank=False, null=False, verbose_name='Hora do nascimento')
     apresentacao = models.CharField(
-        choices=apresentacao_choices, max_length=15, blank=True, verbose_name='Apresentação')
+        choices=apresentacao_choices, max_length=15, blank=False, null=False, verbose_name='Apresentação')
     sexo_rn = models.CharField(
-        choices=sexo_choices, max_length=1, blank=True, verbose_name='Sexo do RN')
-    peso_rn = models.IntegerField(blank=True, verbose_name='Peso do RN')
-    pc = models.FloatField(blank=True, verbose_name='PC')
-    pt = models.FloatField(blank=True, verbose_name='PT')
-    pa = models.FloatField(blank=True, verbose_name='PA')
-    est = models.FloatField(blank=True, verbose_name='Estatura')
+        choices=sexo_choices, max_length=1, blank=False, null=False, verbose_name='Sexo do RN')
+    peso_rn = models.IntegerField(
+        blank=False, null=False, verbose_name='Peso do RN')
+    pc = models.FloatField(blank=False, null=False, verbose_name='PC')
+    pt = models.FloatField(blank=False, null=False, verbose_name='PT')
+    pa = models.FloatField(blank=False, null=False, verbose_name='PA')
+    est = models.FloatField(blank=False, null=False, verbose_name='Estatura')
     apgar_minuto_1 = models.CharField(
-        choices=apgar_choices, max_length=2, blank=True, verbose_name='Apgar 1º minuto')
+        choices=apgar_choices, max_length=2, blank=False, null=False, verbose_name='Apgar 1º minuto')
     apgar_minuto_5 = models.CharField(
-        choices=apgar_choices, max_length=2, blank=True, verbose_name='Apgar 5º minuto')
-    tax_rn = models.FloatField(blank=True, verbose_name='TAX RN')
+        choices=apgar_choices, max_length=2, blank=False, null=False, verbose_name='Apgar 5º minuto')
+    tax_rn = models.FloatField(blank=False, null=False, verbose_name='TAX RN')
     amamentacao_hora_1 = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Amamentação na 1ª hora')
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Amamentação na 1ª hora')
     justificativa_amamentacao = models.CharField(
-        max_length=20, blank=True, verbose_name='Justificativa')
+        max_length=20, blank=True, null=True, verbose_name='Justificativa')
     contato_pele_a_pele = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True)
+        choices=sim_nao_choices, max_length=3, blank=False, null=False)
     justificativa_contato_pele_a_pele = models.CharField(
-        max_length=20, blank=True, verbose_name='Justificativa')
+        max_length=20, blank=True, null=True, verbose_name='Justificativa')
     destino_mae = models.CharField(
-        choices=destino_choices, max_length=10, blank=True, verbose_name='Destino da mãe')
+        choices=destino_choices, max_length=10, blank=False, null=False, verbose_name='Destino da mãe')
     destino_rn = models.CharField(
-        choices=destino_choices, max_length=10, blank=True, verbose_name='Destino do RN')
-    dnv = models.CharField(max_length=20, blank=True, verbose_name='DNV')
+        choices=destino_choices, max_length=10, blank=False, null=False, verbose_name='Destino do RN')
+    dnv = models.CharField(max_length=20, blank=True,
+                           null=True, verbose_name='DNV')
     baby_puff = models.CharField(
-        choices=sim_nao_choices, max_length=3, blank=True, verbose_name='Baby Puff')
-    anotacoes = models.TextField(blank=True, verbose_name='Anotações')
-    show = models.BooleanField(default=True)
-    enviar_arquivo = models.ImageField(blank=True, upload_to='pictures/%Y/%m/')
+        choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Baby Puff')
+    anotacoes = models.TextField(
+        blank=True, null=True, verbose_name='Anotações')
+    show = models.BooleanField(default=False)
+    # enviar_arquivo = models.ImageField(blank=False, upload_to='pictures/%Y/%m/')
     # owner = models.ForeignKey(
-    #     User, on_delete=models.SET_NULL, blank=True, null=True)
+    #     User, on_delete=models.SET_NULL, blank=False, null=False)
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self) -> str:
