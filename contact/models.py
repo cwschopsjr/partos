@@ -337,7 +337,7 @@ class Contact(models.Model):
     medico_obstetra = models.CharField(
         max_length=20, blank=False, verbose_name='Médico Obstetra')
     enfermeira_obstetra = models.CharField(
-        max_length=20, blank=False, null=False)
+        max_length=20, blank=False, verbose_name='Enfermeira Obstetra')
     medico_pediatra = models.CharField(
         max_length=20, blank=False, verbose_name='Médico Pediatra')
     anestesista = models.CharField(max_length=25, blank=False, null=False)

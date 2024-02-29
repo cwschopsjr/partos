@@ -3,6 +3,37 @@ from . import models
 
 
 class ContactForm(forms.ModelForm):
+
+    data_de_internacao = forms.DateField(
+        widget=forms.DateInput(
+            attrs={
+                'placeholder': 'dd/mm/aaaa',
+            }
+        ),
+        label='Data de internação'
+        # help_text='Data em que o paciente foi internado'
+    )
+
+    data_nascimento_gestante = forms.DateField(
+        widget=forms.DateInput(
+            attrs={
+                'placeholder': 'dd/mm/aaaa',
+            }
+        ),
+        label='DN da gestante'
+        # help_text='Data em que o paciente foi internado'
+    )
+
+    data_nascimento_rn = forms.DateField(
+        widget=forms.DateInput(
+            attrs={
+                'placeholder': 'dd/mm/aaaa',
+            }
+        ),
+        label='DN do RN'
+        # help_text='Data em que o paciente foi internado'
+    )
+
     class Meta:
         model = models.Contact
         fields = (
