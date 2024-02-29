@@ -6,14 +6,16 @@
     <h2 class="single-contact-name">Novo registro</h2>
 
     <form 
-      action=""
+      action="{% url 'contact:create' %}"
       method="POST"
       enctype="multipart/form-data"
     >
+    
+    {% csrf_token %}
 
       <div class="form-content">
         <div class="form-group">
-          <label for="id_nome_da_gestante">LABEL</label>
+          <label for="id_nome_da_gestante">Nome da gestante</label>
           <input type="text" name="nome_da_gestante" maxlength="255" id="id_nome_da_gestante">
         </div>
       </div>
