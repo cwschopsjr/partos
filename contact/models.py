@@ -267,30 +267,30 @@ class Contact(models.Model):
         default=None, max_length=50, blank=False, null=False)
     data_nascimento_gestante = models.DateField(default=None,
                                                 auto_now=False, blank=False, null=False, verbose_name='DN da gestante')
-    idade_da_gestante = models.CharField(default=None,
-                                         choices=idade_gestante_choices, max_length=2, blank=False, null=False)
+    idade_da_gestante = models.CharField(
+        choices=idade_gestante_choices, max_length=2, blank=False)
     municipio_de_origem = models.CharField(default=None,
                                            max_length=50, blank=False, null=False, verbose_name='Município de origem')
-    unidade_de_saude = models.CharField(default=None,
-                                        choices=unidade_de_saude_choices, max_length=50, blank=False, null=False, verbose_name='Unidade de Saúde')
-    qtd_consultas_pre_natal = models.CharField(default=None,
-                                               choices=qtd_consultas_choices, max_length=3, blank=False, null=False, verbose_name='Consultas de pré-natal')
-    procedencia = models.CharField(default=None,
-                                   choices=procedencia_choices, max_length=2, blank=False, verbose_name='Procedência')
+    unidade_de_saude = models.CharField(
+        choices=unidade_de_saude_choices, max_length=50, blank=False, verbose_name='Unidade de Saúde')
+    qtd_consultas_pre_natal = models.CharField(
+        choices=qtd_consultas_choices, max_length=3, blank=False, verbose_name='Consultas de pré-natal')
+    procedencia = models.CharField(
+        choices=procedencia_choices, max_length=2, blank=False, verbose_name='Procedência')
     peso = models.FloatField(blank=False)
     altura = models.FloatField(blank=False)
-    don_g = models.CharField(default=None,
-                             choices=don_choices, max_length=2, blank=False, null=False, verbose_name='DON (G)')
-    don_pn = models.CharField(default=None,
-                              choices=don_choices, max_length=2, blank=False, null=False, verbose_name='DON (PN)')
-    don_pc = models.CharField(default=None,
-                              choices=don_choices, max_length=2, blank=False, null=False, verbose_name='DON (PC)')
-    don_a = models.CharField(default=None,
-                             choices=don_choices, max_length=2, blank=False, null=False, verbose_name='DON (A)')
-    ig_semanas = models.CharField(default=None,
-                                  choices=ig_semanas_choices, max_length=2, blank=False, null=False, verbose_name='IG (semanas)')
-    ig_dias = models.CharField(default=None,
-                               choices=ig_dias_choices, max_length=3, blank=False, null=False, verbose_name='IG (dias)')
+    don_g = models.CharField(
+        choices=don_choices, max_length=2, blank=False, verbose_name='DON (G)')
+    don_pn = models.CharField(
+        choices=don_choices, max_length=2, blank=False, verbose_name='DON (PN)')
+    don_pc = models.CharField(
+        choices=don_choices, max_length=2, blank=False, verbose_name='DON (PC)')
+    don_a = models.CharField(
+        choices=don_choices, max_length=2, blank=False, verbose_name='DON (A)')
+    ig_semanas = models.CharField(
+        choices=ig_semanas_choices, max_length=2, blank=False, verbose_name='IG (semanas)')
+    ig_dias = models.CharField(
+        choices=ig_dias_choices, max_length=3, blank=False, verbose_name='IG (dias)')
     trabalho_de_parto = models.CharField(
         choices=sim_nao_choices, max_length=3, blank=False, null=False)
     bolsa = models.CharField(choices=bolsa_choices,
