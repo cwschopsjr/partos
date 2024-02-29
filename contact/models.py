@@ -1,45 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User
-
-# id (primary key - automático)
-# first_name (string), last_name (string), phone (string)
-# email (email), created_date (date), description (text)
-# category (foreign key), show (boolean), picture (imagem)
-
-# Depois
-# owner (foreign key)
-
-
-# class Units(models.Model):
-#     class Meta:
-#         verbose_name = 'Unidade'
-
-#     nome = models.CharField(max_length=50)
-
-#     def __str__(self) -> str:
-#         return self.nome
-
-
-# class Category(models.Model):
-#     class Meta:
-#         verbose_name = 'Categoria'
-
-#     nome = models.CharField(max_length=50)
-
-#     def __str__(self) -> str:
-#         return self.nome
-
-
-# class Category2(models.Model):
-#     class Meta:
-#         verbose_name = 'Uso do leito'
-#         verbose_name_plural = 'Usos do leito'
-
-#     nome = models.CharField(max_length=50)
-
-#     def __str__(self) -> str:
-#         return self.nome
+# from django.contrib.auth.models import User
 
 
 class Contact(models.Model):
@@ -369,10 +330,14 @@ class Contact(models.Model):
         choices=sexo_choices, max_length=1, blank=False, null=False, verbose_name='Sexo do RN')
     peso_rn = models.IntegerField(
         blank=False, null=False, verbose_name='Peso do RN')
-    pc = models.FloatField(blank=False, null=False, verbose_name='PC')
-    pt = models.FloatField(blank=False, null=False, verbose_name='PT')
-    pa = models.FloatField(blank=False, null=False, verbose_name='PA')
-    est = models.FloatField(blank=False, null=False, verbose_name='Estatura')
+    pc = models.FloatField(blank=False, null=False,
+                           verbose_name='Perímetro cefálico (PC)')
+    pt = models.FloatField(blank=False, null=False,
+                           verbose_name='Perímetro torácico (PT)')
+    pa = models.FloatField(blank=False, null=False,
+                           verbose_name='Perímetro abdominal (PA)')
+    est = models.FloatField(blank=False, null=False,
+                            verbose_name='Estatura do RN')
     apgar_minuto_1 = models.CharField(
         choices=apgar_choices, max_length=2, blank=False, null=False, verbose_name='Apgar 1º minuto')
     apgar_minuto_5 = models.CharField(

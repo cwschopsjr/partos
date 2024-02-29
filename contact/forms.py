@@ -34,6 +34,36 @@ class ContactForm(forms.ModelForm):
         # help_text='Data em que o paciente foi internado'
     )
 
+    peso_rn = forms.IntegerField(
+        widget=forms.NumberInput(
+            attrs={
+                'placeholder': 'Peso em gramas',
+            }
+        ),
+        label='Peso do RN'
+        # help_text='Data em que o paciente foi internado'
+    )
+
+    peso = forms.FloatField(
+        widget=forms.NumberInput(
+            attrs={
+                'placeholder': 'Ex: 69,6',
+            }
+        ),
+        label='Peso'
+        # help_text='Data em que o paciente foi internado'
+    )
+
+    altura = forms.FloatField(
+        widget=forms.NumberInput(
+            attrs={
+                'placeholder': 'Ex: 1,71',
+            }
+        ),
+        label='Altura'
+        # help_text='Data em que o paciente foi internado'
+    )
+
     class Meta:
         model = models.Contact
         fields = (
