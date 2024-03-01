@@ -393,5 +393,9 @@
         <p><b>Baby Puff:</b> {{contact.baby_puff}}</p>
         <p><b>Anotações:</b> {{contact.anotacoes}}</p>
         <p><b>Data da criação:</b> {{contact.created_date}}</p>
+
+        <div class="contact-links">
+            <a class="btn btn-link" href="{% url 'contact:update' contact.id %}">Editar</a>
+        </div>
     </div>
 {% endblock content %}

@@ -4,6 +4,7 @@ from django.utils import timezone
 
 
 class Contact(models.Model):
+
     class Meta:
         verbose_name = 'Parto'
 
