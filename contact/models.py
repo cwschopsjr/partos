@@ -251,7 +251,7 @@ class Contact(models.Model):
     ig_semanas = models.CharField(
         choices=ig_semanas_choices, max_length=2, blank=False, verbose_name='IG (semanas)')
     ig_dias = models.CharField(
-        choices=ig_dias_choices, max_length=3, blank=False, verbose_name='IG (dias)')
+        choices=ig_dias_choices, max_length=3, blank=True, verbose_name='IG (dias)')
     trabalho_de_parto = models.CharField(
         choices=sim_nao_choices, max_length=3, blank=False, null=False)
     bolsa = models.CharField(choices=bolsa_choices,

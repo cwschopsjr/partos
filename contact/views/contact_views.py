@@ -53,8 +53,9 @@ def search(request):
         .filter(
             Q(nome_da_gestante__icontains=search_value) |
             Q(data_nascimento_gestante__icontains=search_value) |
-            Q(idade_da_gestante__icontains=search_value) |
-            Q(data_nascimento_rn__icontains=search_value)
+            Q(tipo_de_parto__icontains=search_value) |
+            Q(data_nascimento_rn__icontains=search_value) |
+            Q(data_de_internacao__icontains=search_value)
         )\
         .order_by('-id')
 
