@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 from . import models
 
 
@@ -82,3 +83,7 @@ class ContactForm(forms.ModelForm):
             'justificativa_amamentacao', 'contato_pele_a_pele', 'justificativa_contato_pele_a_pele',
             'destino_mae', 'destino_rn', 'dnv', 'baby_puff', 'anotacoes',
         )
+
+
+class RegisterForm(UserCreationForm):
+    ...
