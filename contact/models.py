@@ -282,7 +282,7 @@ class Contact(models.Model):
         choices=perineo_choices, max_length=25, blank=False, null=False, verbose_name='Períneo')
     indicacao_episiotomia = models.CharField(
         choices=sim_nao_choices, max_length=3, blank=False, null=False, verbose_name='Indicação de Episiotomia')
-    patologia = models.CharField(max_length=30, blank=False, null=False)
+    patologia = models.CharField(max_length=30, blank=True, null=True)
     bola = models.CharField(choices=sim_nao_choices,
                             max_length=3, blank=False, null=False)
     banho = models.CharField(choices=sim_nao_choices,
@@ -298,16 +298,16 @@ class Contact(models.Model):
     medico_obstetra = models.CharField(
         max_length=20, blank=False, verbose_name='Médico Obstetra')
     enfermeira_obstetra = models.CharField(
-        max_length=20, blank=False, verbose_name='Enfermeira Obstetra')
+        max_length=20, blank=True, verbose_name='Enfermeira Obstetra')
     medico_pediatra = models.CharField(
         max_length=20, blank=False, verbose_name='Médico Pediatra')
-    anestesista = models.CharField(max_length=25, blank=False, null=False)
+    anestesista = models.CharField(max_length=25, blank=True, null=True)
     tipo_de_anestesia = models.CharField(
-        choices=anestesia_choices, max_length=25, blank=False, null=False)
+        choices=anestesia_choices, max_length=25, blank=True, null=True)
     quem_realizou_parto = models.CharField(
         max_length=20, blank=False, null=False)
     indicacao_parto_cesarea = models.CharField(
-        max_length=20, blank=False, null=False, verbose_name='Indicação de parto cesárea')
+        max_length=20, blank=True, null=True, verbose_name='Indicação de parto cesárea')
     indicacao_diu_lt = models.CharField(
         choices=diu_lt_choices, max_length=3, blank=False, null=False, verbose_name='Indicação de DIU ou LT')
     profilaxia_ergotrate = models.CharField(
