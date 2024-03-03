@@ -119,9 +119,9 @@
   }
   
   .responsive-table {
-    width: 82%;
+    width: 100%;
     overflow-x: auto;
-    margin-left: 10rem;
+    /* margin-left: 10rem; */
   }
   
   .contacts-table {

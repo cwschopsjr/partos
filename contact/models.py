@@ -223,7 +223,7 @@ class Contact(models.Model):
         ("Banqueta", "Banqueta"), \
         ("Vertical", "Vertical"), \
 
-    data_de_internacao = models.DateField(default=None,
+    data_de_internacao = models.DateField(
                                           auto_now=False, blank=False, null=False, verbose_name='Data de internação')
     nome_da_gestante = models.CharField(
         default=None, max_length=50, blank=False, null=False)
