@@ -13,7 +13,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 from pathlib import Path
-# import django_on_heroku
+import django_on_heroku
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '!"67;+/[VUEm&u{w4W:J4fTB6T>Vaiz+AMl:ywpN&Uuh/[R>57n{8P=TB-44'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool, default=False)
 
 ALLOWED_HOSTS = []
 
@@ -135,9 +136,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # DISABLE_COLLECTSTATIC = 1
 
-# django_on_heroku.settings(locals())
+django_on_heroku.settings(locals())
 
-try:
-    from project.local_settings import *
-except ImportError:
-    ...
+# try:
+#     from project.local_settings import *
+# except ImportError:
+#     ...
