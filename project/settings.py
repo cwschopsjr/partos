@@ -88,12 +88,11 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'ddl4n59efflmuj',
-    'USER': 'jsqsozhjofwtuf'
-    'PASSWORD': '7e6be04be4ff9a8c162f509e845dab31d7be5c9aab3f88f13420b80ba63b6c9c',
-    'URI': 'postgres://jsqsozhjofwtuf:7e6be04be4ff9a8c162f509e845dab31d7be5c9aab3f88f13420b80ba63b6c9c@ec2-35-169-11-108.compute-1.amazonaws.com:5432/ddl4n59efflmuj',
-    'HOST': 'ec2-35-169-11-108.compute-1.amazonaws.com',
+    "default": dj_database_url.config(
+        conn_max_age=600,
+        conn_health_checks=True,
+        ssl_require=True,
+    ),
 }
 
 # Password validation
