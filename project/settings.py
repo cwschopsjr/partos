@@ -15,6 +15,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import django_on_heroku
 from decouple import config
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!"67;+/[VUEm&u{w4W:J4fTB6T>Vaiz+AMl:ywpN&Uuh/[R>57n{8P=TB-44'
+SECRET_KEY = 'django-insecure-@0z$9fp7cdl8$*toz#xneq9!*op(0mtx^9$d0=!@2ux_ab#+b$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,12 +82,11 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'livro_de_parto',
-        'USER': 'cwschopsjr',
-        'PASSWORD': 'iT|669722',
-    }
+    "default": dj_database_url.config(
+        conn_max_age=600,
+        conn_health_checks=True,
+        ssl_require=True,
+    ),
 }
 
 # Password validation
