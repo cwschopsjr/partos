@@ -224,7 +224,7 @@ class Contact(models.Model):
         ("Vertical", "Vertical"), \
 
     data_de_internacao = models.DateField(
-                                          auto_now=False, blank=False, null=False, verbose_name='Data de internação')
+        auto_now=False, blank=False, null=False, verbose_name='Data de internação')
     nome_da_gestante = models.CharField(
         default=None, max_length=50, blank=False, null=False)
     data_nascimento_gestante = models.DateField(default=None,
