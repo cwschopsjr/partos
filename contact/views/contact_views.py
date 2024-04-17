@@ -13,7 +13,7 @@ def index(request):
 
     return render(request, 'contact/index.html', context)
 
-@login_required(login_url='contact:login')
+
 def contact(request, contact_id):
     # single_contact = Contact.objects.filter(pk=contact_id).first()
     single_contact = get_object_or_404(Contact, pk=contact_id, show=True)
@@ -27,7 +27,7 @@ def contact(request, contact_id):
 
     return render(request, 'contact/contact.html', context)
 
-@login_required(login_url='contact:login')
+
 def livro(request):
     contacts = Contact.objects.filter(show=True).order_by('-id')
 
@@ -42,7 +42,7 @@ def livro(request):
 
     return render(request, 'contact/livro.html', context)
 
-@login_required(login_url='contact:login')
+
 def search(request):
     search_value = request.GET.get('q', '').strip()
 

@@ -24,6 +24,10 @@
               Sair
             </a>
           </li>
+        {% else %}
+          <li class="menu-item">
+            <a href="{% url 'contact:login' %}" class="menu-link">Login</a>
+          </li>      
         {% endif %}
       </ul>
     </nav>
