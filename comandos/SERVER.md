@@ -15,6 +15,7 @@ python -c "import string as s;from secrets import SystemRandom as SR;print(''.jo
 
 ```
 ssh-keygen -C 'COMENTÁRIO'
+ssh-keygen -r __IP_ADRESS__ para limpar
 ```
 
 ## No servidor
